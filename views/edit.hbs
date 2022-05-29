@@ -1,0 +1,18 @@
+<link rel="stylesheet" href="style1.css">
+<header>
+    <h1>Update Your Pokemon Details</h1>
+</header>
+<form action="/pokemon/{{this.id}}/?_method=put" method="POST">
+    <div>
+        <label for="title" class="my-3">Name:</label>
+        <input type="text" id="name" name="name" value="{{this.name}}" class="form-control">
+    </div>
+    <div>
+        <label for="title" class="my-3">Image URL (Optional):</label>
+        <input type="text" id="img" name="img" value="{{this.img}}" class="form-control">
+    </div>
+    <div class="text-center m-3">
+        <input type="submit" value="Update" class="btn btn-primary">
+        <a href="/pokemon" class="btn btn-danger">Cancel</a>
+    </div>
+</form>

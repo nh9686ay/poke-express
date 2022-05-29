@@ -1,0 +1,21 @@
+
+<link rel="stylesheet" href="style.css">
+<header class="text-center">
+    <h1>Pokemon</h1>
+    <h2>Gotta Catch Em All!</h2>
+    <a href="/pokemon/new" class="btn btn-primary">Catch Another!</a>
+</header>
+{{#each pokemon}}
+<div class="text-center">
+    <img src="{{this.img}}" alt="a picture of {{this.name}}">
+    <h3>{{this.name}}</h3>
+    <div class="links m-3">
+        <a href="/pokemon/{{this.id}}" class="btn btn-info">View</a>
+        <a href="/pokemon/{{this.id}}/edit" class="btn btn-primary">Edit</a>
+        {{!-- <a href="/pokemon/{{this.id}}" type="submit" value="Delete" method="POST" class="btn btn-danger">Delete</a> --}}
+    <form action="/pokemon/{{this.id}}?_method=DELETE" method="POST" class="d-inline">
+      <input type="submit" value="Delete" class="btn btn-danger">
+      </form>
+    </div>
+</div>
+{{/each}}
